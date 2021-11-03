@@ -24,7 +24,7 @@
         const primaryFontColor = '#FFFFFF';
         const activeElemColor = '#4c545d';
         const linkColor = '#e1e1e1';
-        const osmGreenColor = '#76c551'; //'#76c551';
+        const osmGreenColor = '#76c551';
         let css = `
         .details, .secondary-actions { font-size: small !important; }
         .browse-section p, .note-description { border-left: 5px solid ${osmGreenColor} !important; padding-left: 15px !important; padding-top: 10px !important; padding-bottom: 10px !important; padding-right: 10px !important; background-color: ${darkColorSecondary} !important; border-radius: 0.25rem !important; font-size: normal !important; }
@@ -62,6 +62,13 @@
             return document.querySelector(selector);
         };
 
+        const checkElements = async selector => {
+            while (document.querySelectorAll(selector) === null) {
+                await new Promise(resolve => requestAnimationFrame(resolve))
+            }
+            return document.querySelectorAll(selector);
+        };
+
         checkElement('body').then((selector) => {
             selector.classList.add("bg-dark");
         });
@@ -91,23 +98,22 @@
         }
 
         function gmMain() {
+
             if (window.location.pathname.startsWith('/changeset/')) {
                 checkElement('.map-layout #sidebar h2').then((selector) => {
                     let text = selector.innerText;
-
-                    if (text.startsWith('Zestaw zmian')) {
-                        //
-                        let changesetId = text.replace('Zestaw zmian: ', '');
-                        let browseSection = document.querySelectorAll('.browse-section');
-                        let osmchaButton = createButton(`https://osmcha.org/changesets/${changesetId}/`, 'OSMCha', 'info');
-                        let achaviButton = createButton(`https://overpass-api.de/achavi/?changeset=${changesetId}`, 'Achavi', 'warning')
-                        browseSection[0].prepend(achaviButton);
-                        browseSection[0].prepend(osmchaButton);
-                    }
+                    let changesetId = window.location.pathname.replace('/changeset/', '').replace('/history', '');
+                    let browseSection = document.querySelectorAll('.browse-section');
+                    let osmchaButton = createButton(`https://osmcha.org/changesets/${changesetId}/`, 'OSMCha', 'info');
+                    let achaviButton = createButton(`https://overpass-api.de/achavi/?changeset=${changesetId}`, 'Achavi', 'warning')
+                    let changeVizButton = createButton(`https://resultmaps.neis-one.org/osm-change-viz?c=${changesetId}`, 'Change Viz', 'primary')
+                    browseSection[0].prepend(changeVizButton);
+                    browseSection[0].prepend(achaviButton);
+                    browseSection[0].prepend(osmchaButton);
                 });
             } else if (window.location.pathname.startsWith('/relation/')) {
                 checkElement('.browse-relation').then((selector) => {
-                    let relationId = window.location.pathname.replace('/relation/', '').replace('/history/', '');
+                    let relationId = window.location.pathname.replace('/relation/', '').replace('/history', '');
                     let raButton = createButton(`http://ra.osmsurround.org/analyzeRelation?relationId=${relationId}&_noCache=on`, 'RelationAnalyzer', 'info');
                     let osmHistoryButton = createButton(`https://pewu.github.io/osm-history/#/relation/${relationId}`, 'OSM-History', 'warning');
                     let osmDeepHistoryButton = createButton(`https://osmlab.github.io/osm-deep-history/#/relation/${relationId}`, 'Deep History', 'primary');
@@ -119,7 +125,7 @@
             } else if (window.location.pathname.startsWith('/node/')) {
                 checkElement('.browse-node').then((selector) => {
                     let fullNode = document.querySelectorAll("div.flex-grow-1.text-break h2 bdi");
-                    let nodeId = window.location.pathname.replace('/node/', '').replace('/history/', '');
+                    let nodeId = window.location.pathname.replace('/node/', '').replace('/history', '');
                     let osmHistoryButton = createButton(`https://pewu.github.io/osm-history/#/node/${nodeId}`, 'OSM-History', 'info');
                     let osmDeepHistoryButton = createButton(`https://osmlab.github.io/osm-deep-history/#/node/${nodeId}`, 'Deep History', 'primary');
                     selector.prepend(osmDeepHistoryButton);
@@ -128,7 +134,7 @@
             } else if (window.location.pathname.startsWith('/way/')) {
                 checkElement('.browse-way').then((selector) => {
                     let fullNode = document.querySelectorAll("div.flex-grow-1.text-break h2 bdi");
-                    let wayId = window.location.pathname.replace('/way/', '').replace('/history/', '');
+                    let wayId = window.location.pathname.replace('/way/', '').replace('/history', '');
                     let osmDeepHistoryButton = createButton(`https://osmlab.github.io/osm-deep-history/#/way/${wayId}`, 'Deep History', 'primary');
                     let osmHistoryButton = createButton(`https://pewu.github.io/osm-history/#/way/${wayId}`, 'OSM-History', 'info');
                     selector.prepend(osmDeepHistoryButton);
