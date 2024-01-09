@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OSM Dark Mode+
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Dark mode for OpenStreetMap website
 // @author       Ancymon
 // @match        https://www.openstreetmap.org/*
