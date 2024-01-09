@@ -26,34 +26,152 @@
         const linkColor = '#e1e1e1';
         const osmGreenColor = '#76c551';
         let css = `
-        .details, .secondary-actions { font-size: small !important; }
-        .browse-section p, .note-description { border-left: 5px solid ${osmGreenColor} !important; padding-left: 15px !important; padding-top: 10px !important; padding-bottom: 10px !important; padding-right: 10px !important; background-color: ${darkColorSecondary} !important; border-radius: 0.25rem !important; font-size: normal !important; }
-        .btn-outline-primary { border-color: ${osmGreenColor} !important; }
-        .changesets .row { font-size: small !important; }
-        .loader { filter: invert(80%) !important; }
-        .text-dark, .geolink { color: ${primaryFontColor} !important; }
-        li.selected { background-color: ${activeElemColor} !important; }
-        .browse-tag-k, .browse-tag-v { background-color: ${darkColorSecondary} !important; border-bottom: 1px solid ${darkColor} !important; border-left: 0 !important;  height: 40px !important;}
-        .browse-tag-list { color: #e9ecef !important; font-size: small !important; border: 1px solid ${darkColor} !important; background-color: ${darkColorSecondary} !important; }
-        .search_form, .directions_form, .layers-ui .base-layers li label, .ideditor input[type="search"], .field-label, .body.small-nav header, body.small-nav header { background-color: ${darkColor} !important; color: ${primaryFontColor} !important;}
-        #sidebar_content .note-comments li p { border-left: 5px solid ${osmGreenColor} !important; padding: 10px !important; background-color: ${darkColorSecondary} !important; border-radius: 0.25rem !important; font-size: small !important; }
-        #sidebar_content .list-unstyled { font-size: small !important; }
-        #sidebar_content h4 { font-size: medium !important; }
-        #sidebar_content h2 { font-size: large !important; }
-        #sidebar_content bdi { padding: 2px; font-weight: 600;}
-        #sidebar_content a { color: ${linkColor} !important; text-decoration: underline dotted !important; }
-        .list-unstyled { background-color: ${darkColorSecondary} !important; }
-        .list-unstyled li { padding: 5px !important; }
-        .ideditor .sidebar, .ideditor .fillL, .bg-light { background-color: ${darkColor} !important; color: ${primaryFontColor} !important; }
-        .ideditor button, #map-ui { background: ${darkColorSecondary} !important; color: ${primaryFontColor} !important;}
-        .ideditor .preset-list-button-wrap { background: ${darkColorSecondary} !important; color: ${primaryFontColor} !important; border: 1px solid ${darkColor} !important; }
-        .ideditor .preset-list-button .label { background: ${darkColorSecondary} !important; color: ${primaryFontColor} !important; border: 1px solid ${darkColor} !important; }
-        .ideditor .section .grouped-items-area { background-color: ${darkColorSecondary} !important; }
-        .map-layout #sidebar { background-color: ${darkColor} !important; }
-        .content-heading { background-color: ${darkColorSecondary} !important; color: ${primaryFontColor} !important;}
+                    h2, h3 {
+                      font-size: 1.55rem !important;
+                    }
+                    .details,
+                    .secondary-actions {
+                        font-size: small !important;
+                    }
+
+                    .browse-section p,
+                    .note-description {
+                        border-left: 5px solid ${osmGreenColor} !important;
+                        padding: 10px !important;
+                        background-color: ${darkColorSecondary} !important;
+                        border-radius: 0.25rem !important;
+                        font-size: normal !important;
+                    }
+
+                    .btn-outline-primary {
+                        border-color: ${osmGreenColor} !important;
+                    }
+
+                    .col-auto
+                    {
+                       color: ${osmGreenColor} !important;
+                    }
+
+                    .loader {
+                        font-size: small !important;
+                        filter: invert(80%) !important;
+                    }
+
+                     .changesets .row
+                     {
+                        font-size: small !important;
+                    }
+
+                    .text-dark,
+                    .geolink {
+                        color: ${primaryFontColor} !important;
+                    }
+
+                    li.selected {
+                        background-color: ${activeElemColor} !important;
+                    }
+
+                    .browse-tag-k,
+                    .browse-tag-v {
+                        background-color: ${darkColorSecondary} !important;
+                        border-bottom: 1px solid ${darkColor} !important;
+                        border-left: 0 !important;
+                        height: 40px !important;
+                    }
+
+                    .browse-tag-list {
+                        color: #e9ecef !important;
+                        font-size: small !important;
+                        border: 1px solid ${darkColor} !important;
+                        background-color: ${darkColorSecondary} !important;
+                    }
+
+                    .search_form,
+                    .directions_form,
+                    .layers-ui .base-layers li label,
+                    .ideditor input[type="search"],
+                    .field-label,
+                    .body.small-nav header,
+                    body.small-nav header {
+                        background-color: ${darkColor} !important;
+                        color: ${primaryFontColor} !important;
+                    }
+
+                    #sidebar_content .note-comments li p,
+                    #sidebar_content .list-unstyled {
+                        border-left: 5px solid ${osmGreenColor} !important;
+                        padding: 10px !important;
+                        background-color: ${darkColorSecondary} !important;
+                        border-radius: 0.25rem !important;
+                        font-size: small !important;
+                    }
+
+                    #sidebar_content h4 {
+                        font-size: medium !important;
+                    }
+
+                    #sidebar_content h2 {
+                        font-size: large !important;
+                    }
+
+                    #sidebar_content bdi {
+                        padding: 2px;
+                        font-weight: 600;
+                    }
+
+                    #sidebar_content a {
+                        color: ${linkColor} !important;
+                        text-decoration: underline dotted !important;
+                    }
+
+                    .list-unstyled,
+                    .list-unstyled li {
+                        background-color: ${darkColorSecondary} !important;
+                        padding: 5px !important;
+                    }
+
+                    .ideditor .sidebar,
+                    .ideditor .fillL,
+                    .bg-light {
+                        background-color: ${darkColor} !important;
+                        color: ${primaryFontColor} !important;
+                    }
+
+                    .ideditor button,
+                    #map-ui,
+                    .ideditor .preset-list-button-wrap,
+                    .ideditor .preset-list-button .label,
+                    .ideditor .section .grouped-items-area,
+                    .map-layout #sidebar,
+                    .content-heading,
+                    .table-light,
+                    .leaflet-popup-content-wrapper
+                    {
+                        background: ${darkColorSecondary} !important;
+                        color: ${primaryFontColor} !important;
+                        border: 1px solid ${darkColor} !important;
+                    }
+                    .messages .inbox-row
+                    {
+                        background-color: #212529;
+                    }
         `;
 
         GM_addStyle(css);
+
+         // Find the <html> element
+        const htmlElement = document.querySelector('html');
+        const userButton = document.querySelector('.border-grey');
+
+        // Check if the <html> element exists
+        if (htmlElement) {
+            // Add data-bs-theme="dark" attribute to the <html> tag
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+        }
+
+        if (userButton) {
+             userButton.classList.remove('bg-white', 'text-secondary', 'border-grey');
+        }
 
         const checkElement = async selector => {
             while (document.querySelector(selector) === null) {
@@ -73,18 +191,6 @@
             selector.classList.add("bg-dark");
         });
 
-        var pageURLCheckTimer = setInterval(
-            function () {
-                if (this.lastPathStr !== location.pathname ||
-                    this.lastQueryStr !== location.search ||
-                    this.lastPathStr === null ||
-                    this.lastQueryStr === null
-                ) {
-                    this.lastPathStr = location.pathname;
-                    this.lastQueryStr = location.search;
-                    gmMain();
-                }
-            }, 222);
 
         function createButton(buttonLink, buttonTitle, buttonBg) {
             let link = document.createElement("a");
@@ -98,71 +204,75 @@
         }
 
         function gmMain() {
+            const getPathIdAndType = () => {
+                const path = window.location.pathname;
+                const type = path.split('/')[1];
+                const id = path.split('/')[2].replace('/history', '');
+                return { type, id };
+            };
 
-            if (window.location.pathname.startsWith('/changeset/')) {
-                checkElement('.map-layout #sidebar h2').then((selector) => {
-                    let text = selector.innerText;
-                    let changesetId = window.location.pathname.replace('/changeset/', '').replace('/history', '');
-                    let browseSection = document.querySelectorAll('.browse-section');
-                    let osmchaButton = createButton(`https://osmcha.org/changesets/${changesetId}/`, 'OSMCha', 'info');
-                    let achaviButton = createButton(`https://overpass-api.de/achavi/?changeset=${changesetId}`, 'Achavi', 'warning')
-                    let changeVizButton = createButton(`https://resultmaps.neis-one.org/osm-change-viz?c=${changesetId}`, 'Change Viz', 'primary')
-                    browseSection[0].prepend(changeVizButton);
-                    browseSection[0].prepend(achaviButton);
-                    browseSection[0].prepend(osmchaButton);
+            const createHistoryButton = (url, label, style) => {
+                const { type } = getPathIdAndType();
+                checkElement(`.browse-${type}`).then((selector) => {
+                    const button = createButton(url, label, style);
+                    selector.prepend(button);
                 });
-            } else if (window.location.pathname.startsWith('/relation/')) {
-                checkElement('.browse-relation').then((selector) => {
-                    let relationId = window.location.pathname.replace('/relation/', '').replace('/history', '');
-                    let raButton = createButton(`http://ra.osmsurround.org/analyzeRelation?relationId=${relationId}&_noCache=on`, 'RelationAnalyzer', 'info');
-                    let osmHistoryButton = createButton(`https://pewu.github.io/osm-history/#/relation/${relationId}`, 'OSM-History', 'warning');
-                    let osmDeepHistoryButton = createButton(`https://osmlab.github.io/osm-deep-history/#/relation/${relationId}`, 'Deep History', 'primary');
-                    selector.prepend(osmDeepHistoryButton);
-                    selector.prepend(osmHistoryButton);
-                    selector.prepend(raButton);
+            };
 
+            const createDeepHistoryButton = (url, label, style) => {
+                const { type } = getPathIdAndType();
+                checkElement(`.browse-${type}`).then((selector) => {
+                    const button = createButton(url, label, style);
+                    selector.prepend(button);
                 });
-            } else if (window.location.pathname.startsWith('/node/')) {
-                checkElement('.browse-node').then((selector) => {
-                    let fullNode = document.querySelectorAll("div.flex-grow-1.text-break h2 bdi");
-                    let nodeId = window.location.pathname.replace('/node/', '').replace('/history', '');
-                    let osmHistoryButton = createButton(`https://pewu.github.io/osm-history/#/node/${nodeId}`, 'OSM-History', 'info');
-                    let osmDeepHistoryButton = createButton(`https://osmlab.github.io/osm-deep-history/#/node/${nodeId}`, 'Deep History', 'primary');
-                    selector.prepend(osmDeepHistoryButton);
-                    selector.prepend(osmHistoryButton);
-                });
-            } else if (window.location.pathname.startsWith('/way/')) {
-                checkElement('.browse-way').then((selector) => {
-                    let fullNode = document.querySelectorAll("div.flex-grow-1.text-break h2 bdi");
-                    let wayId = window.location.pathname.replace('/way/', '').replace('/history', '');
-                    let osmDeepHistoryButton = createButton(`https://osmlab.github.io/osm-deep-history/#/way/${wayId}`, 'Deep History', 'primary');
-                    let osmHistoryButton = createButton(`https://pewu.github.io/osm-history/#/way/${wayId}`, 'OSM-History', 'info');
-                    selector.prepend(osmDeepHistoryButton);
-                    selector.prepend(osmHistoryButton);
-                });
+            };
+
+            const { type, id } = getPathIdAndType();
+
+            if (type === 'changeset') {
+                createHistoryButton(`https://osmcha.org/changesets/${id}/`, 'OSMCha', 'info');
+                createHistoryButton(`https://overpass-api.de/achavi/?changeset=${id}`, 'Achavi', 'warning');
+                createHistoryButton(`https://resultmaps.neis-one.org/osm-change-viz?c=${id}`, 'Change Viz', 'primary');
+            } else if (type === 'relation') {
+                createHistoryButton(`http://ra.osmsurround.org/analyzeRelation?relationId=${id}&_noCache=on`, 'RelationAnalyzer', 'info');
+                createHistoryButton(`https://pewu.github.io/osm-history/#/relation/${id}`, 'OSM-History', 'warning');
+                createHistoryButton(`https://osmlab.github.io/osm-deep-history/#/relation/${id}`, 'Deep History', 'primary');
+            } else if (type === 'node') {
+                createDeepHistoryButton(`https://osmlab.github.io/osm-deep-history/#/node/${id}`, 'Deep History', 'primary');
+                createHistoryButton(`https://pewu.github.io/osm-history/#/node/${id}`, 'OSM-History', 'info');
+            } else if (type === 'way') {
+                createDeepHistoryButton(`https://osmlab.github.io/osm-deep-history/#/way/${id}`, 'Deep History', 'primary');
+                createHistoryButton(`https://pewu.github.io/osm-history/#/way/${id}`, 'OSM-History', 'info');
             }
         }
 
         // MENU - new elements
         checkElement('nav.primary').then((selector) => {
-            let userName = document.querySelector(".username").innerText.trim();
-            let changesNode = document.createElement("div");
-            let changesLink = document.createElement("a");
-            let contributionNode = document.createElement("div");
-            let contributionLink = document.createElement("a");
+            const userName = document.querySelector(".username").innerText.trim();
 
-            changesNode.classList.add("btn-group");
-            changesLink.classList.add("btn", "btn-outline-info", "geolink", "text-light");
-            changesLink.innerText = 'Moje zmiany';
-            changesLink.href = `/user/${userName}/history`;
-            contributionLink.classList.add("btn", "btn-outline-info", "text-light");
-            contributionLink.innerText = 'Mój wkład';
-            contributionLink.href = `http://hdyc.neis-one.org/?${userName}`;
-            contributionLink.target = "_blank"
+            const createButton = (text, href, classes) => {
+                const button = document.createElement("a");
+                button.classList.add(...classes);
+                button.innerText = text;
+                button.href = href;
+                return button;
+            };
+
+            const changesNode = document.createElement("div");
+            changesNode.classList.add("btn-group", "pr-1");
+            const toolsNode = document.createElement("div");
+            toolsNode.classList.add("btn-group");
+
+            const changesLink = createButton('Moje zmiany', `/user/${userName}/history`, ["btn", "btn-outline-info", "geolink", "text-light"]);
+            const contributionLink = createButton('Mój wkład', `http://hdyc.neis-one.org/?${userName}`, ["btn", "btn-outline-info", "text-light"]);
+            contributionLink.target = "_blank";
+            const notesLink = createButton('Losowa uwaga', 'https://brzozo.ws/random-note/PL', ["btn", "btn-outline-warning", "text-light"]);
+
             changesNode.appendChild(changesLink);
             changesNode.appendChild(contributionLink);
+            toolsNode.appendChild(notesLink);
             selector.appendChild(changesNode);
-
+            selector.appendChild(toolsNode);
         });
 
     })();
